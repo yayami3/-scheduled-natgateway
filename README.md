@@ -15,7 +15,7 @@ Then, instantiate the construct with the desired parameters:
 ```typescript
 const scheduledNatGateway = new ScheduledNatGateway(scope, 'NatGateway', {
   publicSubnetId: 'subnet-12345',
-  privateSubnetId: 'subnet-67890'
+  privateSubnetId: 'subnet-67890',
   createSchedule: '0 12 * * *',
   deleteSchedule: '0 0 * * *',
 });
@@ -61,10 +61,6 @@ const scheduledNatGateway = new ScheduledNatGateway(stack, 'NatGateway', {
   deleteSchedule: '0 0 * * ? *',
 });
 
-// Output the ID of the NAT Gateway
-new cdk.CfnOutput(stack, 'NatGatewayId', {
-  value: scheduledNatGateway.natGatewayId,
-});
 ```
 
 This example creates a VPC with a public and a private subnet, and then creates a NAT Gateway in the public subnet at noon every day and deletes it at midnight every day. It also adds a route to the NAT Gateway in the private subnet's route table, so that traffic from the private subnet can be routed through the NAT Gateway. The ID of the NAT Gateway is output as a stack output.

@@ -3,7 +3,7 @@
   "description": "Scheduled NatGateway at the time you need it",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yayami3/scheduled-nat-gateway.git"
+    "url": "https://github.com/yayami3/scheduled-natgateway.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -66,6 +66,7 @@
     "aws-cdk",
     "awscdk",
     "cdk",
+    "cost",
     "nat"
   ],
   "main": "lib/index.js",
