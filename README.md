@@ -7,7 +7,7 @@ ScheduledNatGateway is a CDK TypeScript construct that creates a Lambda function
 To use the ScheduledNatGateway construct, first import it into your CDK stack:
 
 ```typescript
-import { ScheduledNatGateway } from 'scheduled-nat-gateway';
+import { ScheduledNatGateway } from 'scheduled-natgateway';
 ```
 
 Then, instantiate the construct with the desired parameters:
@@ -31,7 +31,7 @@ Here's an example of how to use the ScheduledNatGateway construct:
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
-import { ScheduledNatGateway } from 'scheduled-nat-gateway';
+import { ScheduledNatGateway } from 'scheduled-natgateway';
 
 const app = new cdk.App();
 const stack = new cdk.Stack(app, 'MyStack');
@@ -63,4 +63,4 @@ const scheduledNatGateway = new ScheduledNatGateway(stack, 'NatGateway', {
 
 ```
 
-This example creates a VPC with a public and a private subnet, and then creates a NAT Gateway in the public subnet at noon every day and deletes it at midnight every day. It also adds a route to the NAT Gateway in the private subnet's route table, so that traffic from the private subnet can be routed through the NAT Gateway. The ID of the NAT Gateway is output as a stack output.
+This example creates a VPC with a public and a private subnet, and then creates a NAT Gateway in the public subnet at noon every day and deletes it at midnight every day. It also adds a route to the NAT Gateway in the private subnet's route table, so that traffic from the private subnet can be routed through the NAT Gateway.
