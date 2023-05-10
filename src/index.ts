@@ -51,6 +51,7 @@ export class ScheduledNatGateway extends Construct {
       new iam.PolicyStatement({
         actions: [
           'ec2:AssociateRouteTable',
+          'ec2:CreateRoute',
           'ec2:ReplaceRoute',
           'ec2:DeleteRoute',
         ],
