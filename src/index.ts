@@ -72,6 +72,7 @@ export class ScheduledNatGateway extends Construct {
     );
     // CloudWatch Event Rule to trigger the Lambda function on a schedule
     const rule = new events.Rule(this, 'ScheduledNatGatewayRule', {
+      ruleName: 'CreateNatGateway',
       schedule: events.Schedule.expression(`cron(${props.createSchedule})`),
     });
     rule.addTarget(
@@ -81,6 +82,7 @@ export class ScheduledNatGateway extends Construct {
     );
 
     const rule2 = new events.Rule(this, 'ScheduledNatGatewayRule2', {
+      ruleName: 'DeleteNatGateway',
       schedule: events.Schedule.expression(`cron(${props.deleteSchedule})`),
     });
     rule2.addTarget(
