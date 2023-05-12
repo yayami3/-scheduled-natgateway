@@ -19,7 +19,7 @@ test('ScheduledNatGateway creates a CloudWatch Event Rule and Lambda Function wi
   const template = Template.fromStack(stack);
 
   template.hasResourceProperties('AWS::Lambda::Function', {
-    Runtime: 'nodejs16.x',
+    Runtime: 'nodejs18.x',
   });
   template.hasResourceProperties('AWS::Events::Rule', {
     ScheduleExpression: 'cron(0 8 * * ? *)',

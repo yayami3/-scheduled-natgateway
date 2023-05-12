@@ -21,7 +21,7 @@ export class ScheduledNatGateway extends Construct {
     const lambdaFn = new lambda.Function(this, 'ScheduledNatGatewayFunction', {
       code: lambda.Code.fromAsset(path.join(__dirname, '../functions')),
       handler: 'index.handler',
-      runtime: lambda.Runtime.NODEJS_16_X,
+      runtime: lambda.Runtime.NODEJS_18_X,
       timeout: cdk.Duration.seconds(600),
       environment: {
         PUBLIC_SUBNET_ID: props.publicSubnetId,
